@@ -1,4 +1,3 @@
-
 library(ggplot2)
 library(dplyr)
 library(scico)
@@ -56,7 +55,11 @@ for (i in seq_along(comma_list)) {
 }
 
 # Final styling
-p +
+canvas.comma <- p +
   theme_void() +
   theme(legend.position = "none") +
   coord_equal(xlim = c(-15, 15), ylim = c(-10, 10))
+
+ggsave("comma.jpg", canvas.comma, dpi = 900)
+
+
